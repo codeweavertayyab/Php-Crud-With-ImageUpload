@@ -18,7 +18,7 @@ $result = mysqli_query($con,$query);
     <div class="container-fluid">
     <h1 class="display-3 fw-bold m-5">ALL STUDENTS</h1>
     <div>
-        <a href="create.php" class="btn">Create New Record</a>
+        <a href="create.php" class="btn btncreate">Create New Record</a>
     </div>
     </div>
     
@@ -39,6 +39,7 @@ $result = mysqli_query($con,$query);
                 <th>Percentage</th>
                 <th>Grade</th>
                 <th>Image</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -63,6 +64,11 @@ $result = mysqli_query($con,$query);
                 <td><?php echo $data['grade']?></td>
                 <td>
                     <img width="50" src="../uploads/<?php echo $data['std_name'] .'/'. $data['std_image']?>" alt="">
+                </td>
+                <td>
+                    <a href="" class="btn btnactions btn-warning">Update</a>
+                
+                    <a href="delete.php?id=<?php echo $data['id']?>" class="btn btnactions btn-danger">Delete</a>
                 </td>
             </tr>
             <?php }?>
